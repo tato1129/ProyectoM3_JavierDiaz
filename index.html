@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta
+      name="description"
+      content="Charlá con Maradona, Favaloro y San Martín: recreaciones con inteligencia artificial de personajes que hicieron historia."
+    />
+    <meta name="theme-color" content="#ffffff" />
+    <title>Charlas con la Historia</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/styles.css" />
+    <script>
+      // Aplica el tema guardado antes de pintar, para evitar el "flash" de color.
+      (function () {
+        var theme = 'light';
+        try {
+          var saved = localStorage.getItem('chat-personajes:theme');
+          if (saved === 'light' || saved === 'dark') theme = saved;
+          else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) theme = 'dark';
+        } catch (e) {}
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    </script>
+  </head>
+  <body>
+    <div class="shell">
+      <a class="brand" href="/home" data-link aria-label="Charlas con la Historia, ir al inicio">
+        <span class="brand__mark" aria-hidden="true"></span>
+        <span class="brand__name">Charlas con la Historia</span>
+      </a>
+      <nav class="nav" id="nav" aria-label="Navegación principal"></nav>
+      <button class="theme-toggle" id="theme-toggle" type="button"></button>
+      <main id="app" tabindex="-1"></main>
+    </div>
+    <noscript>Necesitás activar JavaScript para usar esta aplicación.</noscript>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
