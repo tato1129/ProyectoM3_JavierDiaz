@@ -7,7 +7,6 @@
 import { getSystemPrompt, isValidCharacter } from './_lib/prompts.js';
 
 const GEMINI_BASE_URL = 'https://generativelanguage.googleapis.com/v1beta/models';
-const DEFAULT_MODEL = 'gemini-3.8-flash';
 const MAX_MESSAGES = 20; // ventana de contexto que se envía a Gemini
 const MAX_CHARS_PER_MESSAGE = 1000;
 const REQUEST_TIMEOUT_MS = 20000;
